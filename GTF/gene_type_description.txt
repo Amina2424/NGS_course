@@ -1,0 +1,16 @@
+wget https://ftp.ebi.ac.uk/pub/databases/gencode/Gencode_human/release_25/gencode.v25.primary_assembly.annotation.gtf.gz
+
+
+bash grep -v '^#' gencode.v25.primary_assembly.annotation.gtf | awk -F'\t' '$3 == "gene"' | grep -o 'gene_type "[^"]*"' | cut -d '"'  -f2 | sort | uniq | wc -l
+
+Пояснение:
+
+grep -v '^#': Игнорирует комментарии (строки, начинающиеся с #).
+
+awk -F'\t' '$3 == "gene"': Выбирает строки, где третий столбец равен gene. (разделитель табуляции)
+
+grep -o 'gene_type "[^"]*"': Извлекает фрагменты вида gene_type "значение".
+
+cut -d '"' -f2: Оставляет только значение внутри кавычек.
+
+sort | uniq | wc -l: Сортирует, удаляет дубликаты и подсчитывает количество уникальных значений.
