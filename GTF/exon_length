@@ -2,3 +2,13 @@ awk '$3 == "exon" && $0 ~ /gene_type "protein_coding"/' gencode.v25.primary_asse
 awk '{len = $5 - $4 + 1; split($0, a, "gene_name"); split(a[2], b, "\""); print b[2], len}' | \
 sort -k2,2nr | \
 head -1
+
+Фильтрация экзонов протеин-кодирующих генов:
+bash
+awk '$3 == "exon" && $0 ~ /gene_type "protein_coding"/' gencode.v25.annotation.gtf
+Вычисление длины и извлечение имени гена:
+bash
+awk '{len=$5-$4+1; split($0,a,"gene_name"); split(a[2],b,"\""); print b[2],len}' 
+Сортировка по длине (по убыванию):
+bash
+sort -k2,2nr
