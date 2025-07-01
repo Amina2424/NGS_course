@@ -1,0 +1,4 @@
+awk '$3 == "exon" && $0 ~ /gene_type "protein_coding"/' gencode.v25.primary_assembly.annotation.gtf | \
+awk '{len = $5 - $4 + 1; split($0, a, "gene_name"); split(a[2], b, "\""); print b[2], len}' | \
+sort -k2,2nr | \
+head -1
