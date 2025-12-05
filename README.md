@@ -10,14 +10,3 @@ This repository contains **practical assignments, scripts, and learning material
 The structured curriculum is designed for **biologists, bioinformaticians, and data scientists** seeking to develop **practical NGS analysis skills**.  
 
 🔗 **Course Link**: [Next-Generation Sequencing (NGS) Bioinformatics Course](https://stepik.org/course/1142/syllabus)  
-
----
-
-
-## **How to Use**  
-1. **Follow course modules** on Stepik alongside the provided materials.  
-2. **Run practical exercises** in a Linux environment (local or cloud-based).  
-
----
-
-Happy bioinformatics hacking! 🧬💻
